@@ -8,5 +8,6 @@
 
 .country:hover {
   fill: red;
+  cursor: pointer;
 }
 /*# sourceMappingURL=styles.css.map */

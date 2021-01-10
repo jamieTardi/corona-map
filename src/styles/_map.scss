@@ -1,6 +1,4 @@
-.united{
-    fill: red;
-}
+
 
 .hello {
     color: red;
@@ -9,5 +7,6 @@
 .country{
     &:hover{
         fill: red;
+        cursor: pointer;
     }
 }

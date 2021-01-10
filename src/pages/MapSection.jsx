@@ -1,7 +1,8 @@
 import React from 'react'
 import {toggle} from '../actions/toggle'
-import {useSelector, useDispatch} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import Map from '../components/Map'
+import WorldData from '../components/WorldData'
 
 const MapSection = () => {
 const dispatch = useDispatch()
@@ -10,6 +11,7 @@ const dispatch = useDispatch()
         <div>
             <Map/>
             <button onClick={() => dispatch(toggle())}>Click me!</button>
+            <WorldData />
         </div>
     )
 }
