@@ -9,7 +9,7 @@ const dispatch = useDispatch()
     return (
         <div>
             <Map/>
-            <button onClick={() => dispatch(toggle())}>Click me</button>
+            <button onClick={() => dispatch(toggle())}>Click me!</button>
         </div>
     )
 }
