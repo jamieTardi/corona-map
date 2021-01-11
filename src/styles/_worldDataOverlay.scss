@@ -50,7 +50,8 @@
     text-align: center;
     @media (min-width: 901px){
         width: 70%;
-        height: 100%;
+        min-height: 340px;
+        overflow: hidden;
     }
     @media(max-width: 900px){
         height: 200px;
