@@ -164,7 +164,7 @@ const WorldDataOverlay = ({toggleWorldData , setToggleWorldData}) => {
         }}/>
             </div>
             </div>
-            <button onClick={() => setToggleWorldData(false)} >Close Me</button>
+            <button className="close-btn" onClick={() => setToggleWorldData(false)} >Close Me</button>
             <div className="overlay-info-container">
             <div className="info1 overlay-info"><h3>Total Cases Worldwide:</h3>{boxInfo.cases}</div>
             <div className="info2 overlay-info"><h3>Total Deaths Worldwide:</h3>{boxInfo.deaths}</div>

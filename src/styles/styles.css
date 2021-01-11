@@ -86,6 +86,24 @@
   }
 }
 
+.close-btn {
+  width: 100px;
+  border: none;
+  height: 50px;
+  margin-bottom: 1rem;
+  background-color: #00BD58;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .close-btn {
+    margin-left: 35%;
+    height: 35px;
+  }
+}
+
 .overlay-charts {
   width: 40%;
   height: 40%;
