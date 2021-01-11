@@ -1,17 +1,19 @@
-import React from 'react'
-import {toggle} from '../actions/toggle'
-import {useDispatch} from 'react-redux'
+import React, {useState} from 'react'
 import Map from '../components/Map'
 import WorldData from '../components/WorldData'
+import WorldDataOverlay from '../components/WorldDataOverlay'
 
 const MapSection = () => {
-const dispatch = useDispatch()
+const [toggleWorldData, setToggleWorldData] = useState(false)
+const [worldData,
+    setWorldData] = useState(null)
 
     return (
         <div>
+            <h1 className="title">An Application that looks at the Coronavirus Data</h1>
             <Map/>
-            <button onClick={() => dispatch(toggle())}>Click me!</button>
-            <WorldData />
+            <WorldData setToggleWorldData={setToggleWorldData} worldData={worldData} setWorldData={setWorldData}/>
+            <WorldDataOverlay toggleWorldData={toggleWorldData} setToggleWorldData={setToggleWorldData} worldData={worldData}/>
         </div>
     )
 }

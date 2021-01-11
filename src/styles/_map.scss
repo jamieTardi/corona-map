@@ -1,7 +1,9 @@
-
-
-.hello {
-    color: red;
+.world-map{
+    min-width: 100vw;
+    height: 70vh;
+    svg{
+        width: 100%;
+    }
 }
 
 .country{
@@ -9,4 +11,8 @@
         fill: red;
         cursor: pointer;
     }
+}
+
+.map-section{
+    max-height: 100vh;
 }
