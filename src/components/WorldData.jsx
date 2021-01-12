@@ -2,11 +2,8 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import {Line} from 'react-chartjs-2'
 
-const WorldData = ({setToggleWorldData}) => {
-    const [worldData,
-        setWorldData] = useState(null)
-    const [totalCases,
-        setTotalCases] = useState(null)
+const WorldData = ({setToggleWorldData, worldData, setWorldData}) => {
+
     const [chartData, setChartData] = useState({})
     useEffect(() => {
         axios
@@ -55,7 +52,7 @@ useEffect(() => {
     <> 
     {
         worldData
-            ? <div onClick={() => setToggleWorldData(true)} style={{height: "500px", width: '500px'}}>
+            ? <div onClick={() => setToggleWorldData(true)} style={{height: "300px", width: '500px', cursor: "pointer"}}>
                 <Line data={chartData} options={{
                     responsive: true,
                     title: 'Total cases vs Total Deaths',

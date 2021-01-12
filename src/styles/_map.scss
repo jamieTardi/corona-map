@@ -1,8 +1,10 @@
 .world-map{
     min-width: 100vw;
-    height: 70vh;
+    height: 100vh;
+    overflow: scoll;
     svg{
         width: 100%;
+        margin-bottom: 2rem;
     }
 }
 
@@ -14,5 +16,12 @@
 }
 
 .map-section{
-    max-height: 100vh;
+    min-height: 100vh;
+}
+
+.main-page-graphs-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 1rem 1rem 1rem 1rem;
 }
