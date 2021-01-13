@@ -1,6 +1,6 @@
 .world-map{
     min-width: 100vw;
-    height: 100vh;
+    height: 75vh;
     overflow: scoll;
     svg{
         width: 100%;
@@ -22,6 +22,12 @@
 .main-page-graphs-container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 1rem 1rem 1rem 1rem;
+    max-height: 15vh;
+}
+
+.country-ID{
+    width: 100vw;
+    text-align: center;
 }

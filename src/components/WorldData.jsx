@@ -52,7 +52,7 @@ useEffect(() => {
     <> 
     {
         worldData
-            ? <div onClick={() => setToggleWorldData(true)} style={{height: "300px", width: '500px', cursor: "pointer"}}>
+            ? <div onClick={() => setToggleWorldData(true)} style={{height: "300px", width: '420px', cursor: "pointer"}}>
                 <Line data={chartData} options={{
                     responsive: true,
                     title: 'Total cases vs Total Deaths',

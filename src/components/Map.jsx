@@ -3,17 +3,21 @@ import CountryChart from './CountryChart'
 import WorldData from './WorldData'
 import axios from 'axios'
 
-const Map = ({countryId, setCountryId, setToggleWorldData, worldData, setWorldData}) => {
+const Map = ({countryId, setCountryId, setToggleWorldData, worldData, setWorldData, setCountryData, CountryChart1, CountryChart2, CountryChart3, CountryChart4, smallCountryBoxInfo}) => {
    
     const countryInfo = e => {
+        chart(countryId)
         setCountryId(e.target.id)
-        chart()
+        CountryChart1()
+        CountryChart2()
+        CountryChart3()
+        CountryChart4()
+        smallCountryBoxInfo()
     }
-    console.log(countryId)
 
     const [countryChartData, setCountryChartData] = useState({})
-    const chart = () => {
-        axios.get(`https://disease.sh/v3/covid-19/countries/${countryId}?strict=true`)
+    const chart = (countryID) => {
+        axios.get(`https://disease.sh/v3/covid-19/countries/${countryID ? countryID : countryId}?strict=true`)
         .then(response => {
             let totalWorldCases = response.data.cases
             let worldCasesToday = response.data.todayCases
@@ -46,7 +50,7 @@ chart()
      x="0px"
      y="0px"
      width="784.077px"
-     height="458.627px"
+     height="420.627px"
      viewBox="30.767 241.591 784.077 458.627"
      id="world-map">
 <g>
@@ -56,8 +60,8 @@ chart()
     <path onClick={countryInfo} fill=""className="country" id="al" d="M450.679,420.438v3.984l1.142,2.152l0.82-0.096l1.409-2.566l-0.821-1.15l-0.319-2.844l-1.089-1.012L450.679,420.438L450.679,420.438z"/>
     <path onClick={countryInfo} fill=""className="country" id="am" d="M507.47,420.549l4.149,5.411l-1.218,1.427l-2.939-0.51l-3.646-3.268l0.196-2.146L507.47,420.549L507.47,420.549z"/>
     <g onClick={countryInfo} fill=""className="country" id="ao">
-        <path class="mainland"className="country" fill="" d="M437.366,547.461l2.948,11.003l-0.069,3.478l-4.313,4.633l-0.647,7.527l16.597,0.147l5.395,1.954l4.45-0.58l-2.594-3.251l0.01-9.282l5.101-0.217v-3.621l-4.142-0.172l-0.829-8.575l-1.746,0.024l-0.943-0.848l-1.027,0.054l-1.365,2.646h-5.255l-1.22-1.227l0.363-1.738l-1.436-2.101L437.366,547.461L437.366,547.461z"/>
-        <path  fill=""className="country" d="M435.577,544.453l1.504,1.953l1.945-1.842l-0.571-1.909l-0.483-0.035L435.577,544.453L435.577,544.453z"/>
+        <path id="ao" class="mainland"className="country" fill="" d="M437.366,547.461l2.948,11.003l-0.069,3.478l-4.313,4.633l-0.647,7.527l16.597,0.147l5.395,1.954l4.45-0.58l-2.594-3.251l0.01-9.282l5.101-0.217v-3.621l-4.142-0.172l-0.829-8.575l-1.746,0.024l-0.943-0.848l-1.027,0.054l-1.365,2.646h-5.255l-1.22-1.227l0.363-1.738l-1.436-2.101L437.366,547.461L437.366,547.461z"/>
+        <path id="ao" fill=""className="country" d="M435.577,544.453l1.504,1.953l1.945-1.842l-0.571-1.909l-0.483-0.035L435.577,544.453L435.577,544.453z"/>
     </g>
     <g onClick={countryInfo} className="country" fill="" id="ar">
         <path onClick={countryInfo} className="country" fill="" id="ar" d="M279.05,600.613l1.677,1.571l-6.371,9.467l-2.239,2.479l0.777,10.813l4.918,5.974l-4.132,7.209l-3.129,1.35h-3.579l1.003,5.627l-5.593,1.92l1.34,4.729l-3.354,10.701l4.141,3.38l-2.239,5.515l-3.804,5.975l2.014,4.165l-4.918,0.786l-4.028-4.951l-0.674-15.432l-6.258-26.209l1.893-9.163l-4.028-11.713l2.68-15.204l2.463-2.931l-0.605-2.222l3.164-2.888l7.054,0.483l3.942,4.21l4.555,0.078l4.668,2.853l-1.375,3.217l0.329,3.25l6.612-0.312L279.05,600.613L279.05,600.613z"/>
@@ -440,9 +444,12 @@ chart()
     <path onClick={countryInfo} fill="" className="country" id="zw" d="M468.52,578.226l7.755,8.757l5.946,1.513l3.984-6.248l-0.312-8.281l-6.465-3.337l-2.431,1.098l-3.62,5.524l-5.014-0.053L468.52,578.226L468.52,578.226z"/>
 </g>
 </svg>
+<div className="country-ID-container">
+<h3 className="country-ID">The current country ID is {countryId.toUpperCase()}</h3>
+</div>
 <div className="main-page-graphs-container">
 <WorldData  setToggleWorldData={setToggleWorldData} worldData={worldData} setWorldData={setWorldData}/>
-<CountryChart countryId={countryId} countryChartData={countryChartData}/>
+<CountryChart countryId={countryId} countryChartData={countryChartData} setCountryData={setCountryData}/>
 </div>
 
         </div>

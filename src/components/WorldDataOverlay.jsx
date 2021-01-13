@@ -7,8 +7,6 @@ const WorldDataOverlay = ({toggleWorldData , setToggleWorldData}) => {
     const [worldCharts2, setWorldCharts2] = useState({})
     const [worldCharts3, setWorldCharts3] = useState({})
     const [worldCharts4, setWorldCharts4] = useState({})
-
-
     const [boxInfo, setBoxInfo] = useState(null)
     
     //First Main Chart

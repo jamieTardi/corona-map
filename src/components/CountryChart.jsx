@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react'
 import {Line} from 'react-chartjs-2'
 
-const CountryChart = ({countryId, countryChartData }) => {
+const CountryChart = ({ countryChartData, setCountryData }) => {
+
 
     return (
-        <div style={{height: "300px", width: '500px', cursor: "pointer"}}>
+        <div onClick={() => {setCountryData(true)}} style={{height: "300px", width: '420px', cursor: "pointer"}}>
            <Line data={countryChartData} options={{
                     responsive: true,
                     title: 'Total cases vs Total Deaths',
