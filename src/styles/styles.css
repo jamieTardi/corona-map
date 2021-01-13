@@ -35,7 +35,8 @@
   text-align: center;
 }
 
-.overlay-container {
+.overlay-container,
+.overlay-container-country {
   position: fixed;
   top: 0%;
   bottom: 0%;
@@ -57,7 +58,8 @@
 }
 
 @media (max-width: 900px) {
-  .overlay-container {
+  .overlay-container,
+  .overlay-container-country {
     width: 100vw;
     overflow: scroll;
     -webkit-box-orient: vertical;
@@ -224,12 +226,17 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
 }
 
 .title-container h1 {
   text-align: center;
   color: black;
+}
+
+@media (max-width: 900px) {
+  .title-container h1 {
+    font-size: 1rem;
+  }
 }
 
 .title-wrapper {
@@ -247,6 +254,8 @@
           align-items: center;
   background-color: white;
   border-radius: 1rem;
+  -webkit-box-shadow: 5px 5px 15px 5px #4C545D;
+          box-shadow: 5px 5px 15px 5px #4C545D;
 }
 
 .subtitle {

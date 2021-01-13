@@ -4,11 +4,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
 
     h1{
         text-align: center;
         color: black;
+        @media (max-width: 900px){
+            font-size: 1rem;
+        }
     }
 }
 
@@ -21,6 +23,7 @@
     align-items: center;
     background-color: white;
 border-radius: 1rem;
+box-shadow: 5px 5px 15px 5px #4C545D;
 }
 
 .subtitle{

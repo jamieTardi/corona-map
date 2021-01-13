@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react'
-import axios from 'axios'
+import React from 'react'
 import {Pie, Bar, Doughnut} from 'react-chartjs-2'
 
 const CountryDataOverlay = ({ countryData, setCountryData, countryCharts1, countryCharts2,
@@ -52,8 +51,8 @@ const CountryDataOverlay = ({ countryData, setCountryData, countryCharts1, count
             </div>
             <button className="close-btn" onClick={() => setCountryData(false)} >Close Me</button>
             <div className="overlay-info-container">
-            <div className="info1 overlay-info"><h3>Total Cases Worldwide:</h3>{smallCountryBoxInfo.cases}</div>
-            <div className="info2 overlay-info"><h3>Total Deaths Worldwide:</h3>{smallCountryBoxInfo.deaths}</div>
+            <div className="info1 overlay-info"><h3>Total Country Cases:</h3>{smallCountryBoxInfo.cases}</div>
+            <div className="info2 overlay-info"><h3>Total Country Deaths:</h3>{smallCountryBoxInfo.deaths}</div>
             <div className="info3 overlay-info"><h3>Cases today:</h3>{smallCountryBoxInfo.todayCases}</div>
             <div className="info4 overlay-info"><h3>Deaths today:</h3>{smallCountryBoxInfo.todayDeaths}</div>
             </div>

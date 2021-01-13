@@ -446,6 +446,7 @@ chart()
 </svg>
 <div className="country-ID-container">
 <h3 className="country-ID">The current country ID is {countryId.toUpperCase()}</h3>
+<p className="country-ID">Please Click on a Graph for more details.</p>
 </div>
 <div className="main-page-graphs-container">
 <WorldData  setToggleWorldData={setToggleWorldData} worldData={worldData} setWorldData={setWorldData}/>

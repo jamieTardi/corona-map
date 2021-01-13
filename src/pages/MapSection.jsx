@@ -16,15 +16,7 @@ const [worldData,
     const [countryCharts3, setCountryCharts3] = useState({})
     const [countryCharts4, setCountryCharts4] = useState({})
     const [countryBoxInfo, setCountryBoxInfo] = useState(null)
-    const addCountryOverlay = () => {
-        setCountryData(true)
-        chart1()
-        chart2()
-        chart3()
-        chart4()
-        smallBoxInfo()
-    }
-    console.log(countryId)
+   
     const chart1 = () => {
         axios.get(`https://disease.sh/v3/covid-19/countries/${countryId}?strict=true`)
         .then(response => {
@@ -133,8 +125,8 @@ const [worldData,
             CountryChart1={chart1} CountryChart2={chart2} CountryChart3={chart3} CountryChart4={chart4} smallCountryBoxInfo={smallBoxInfo} />
             <WorldDataOverlay toggleWorldData={toggleWorldData} setToggleWorldData={setToggleWorldData} worldData={worldData}/>
             <CountryDataOverlay countryId={countryId} countryData={countryData} 
-            setCountryData={setCountryData} countryCharts1={countryCharts1} countryCharts2={countryCharts1} countryCharts3={countryCharts3} countryCharts4={countryCharts4} 
-            smallCountryBoxInfo={smallBoxInfo}
+            setCountryData={setCountryData} countryCharts1={countryCharts1} countryCharts2={countryCharts2} countryCharts3={countryCharts3} countryCharts4={countryCharts4} 
+            smallCountryBoxInfo={countryBoxInfo}
             />
         </div>
     )
